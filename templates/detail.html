@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" style="max-width:640px">
+  <h2 class="my-4">Detail Data</h2>
+  <ul class="list-group">
+
+    <li class="list-group-item"><strong>Nama Mahasiswa:</strong> {{ d['nama_mahasiswa'] }}</li>
+    <li class="list-group-item"><strong>Perusahaan:</strong> {{ d['company'] }}</li>
+    <li class="list-group-item"><strong>Posisi:</strong> {{ d['position'] }}</li>
+    <li class="list-group-item"><strong>Tanggal Mulai:</strong> {{ d['start_date'] }}</li>
+    <li class="list-group-item"><strong>Tanggal Selesai:</strong> {{ d['end_date'] or '-' }}</li>
+    <li class="list-group-item"><strong>Deskripsi:</strong><br>{{ d['description'] }}</li>
+  </ul>
+  <a href="{{ url_for('list_data') }}" class="btn btn-secondary mt-3">Kembali</a>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <p class="text-uppercase text-info fw-bold">Magang Mahasiswa</p>
+        <h1 class="display-5 fw-bold mb-3">Sistem ini membantu mencari dan mencatat pengalaman magang</h1>
+        <p class="mb-4">Agar dapat dengan mudah menemukan peluang magang yang sesuai dengan minat dan jurusannya.</p>
+        {% if 'user' in session %}
+        <a href="{{ url_for('list_data') }}" class="btn btn-primary btn-lg">Lihat Data Magang</a>
+        {% else %}
+        <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg">Daftar Sekarang</a>
+        {% endif %}
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="http://nugasin.com/template/assets/website/blog/1364b85be9395c5b0afe875c47aa1367.png" alt="Gambar Blog" style="max-width: 100%; height: auto;">
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

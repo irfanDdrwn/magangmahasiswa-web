@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" style="max-width:640px">
+  <h2 class="my-4 text-center">Edit Data Magang</h2>
+  <form method="post">
+    <div class="mb-3"><label>Nama Mahasiswa</label><input type="text" name="student_name" value="{{ d['student_name'] }}" class="form-control" required></div>
+    <div class="mb-3"><label>Perusahaan</label><input type="text" name="company" value="{{ d['company'] }}" class="form-control" required></div>
+    <div class="mb-3"><label>Posisi</label><input type="text" name="position" value="{{ d['position'] }}" class="form-control" required></div>
+    <div class="mb-3"><label>Tanggal Mulai</label><input type="date" name="start_date" value="{{ d['start_date'] }}" class="form-control" required></div>
+    <div class="mb-3"><label>Tanggal Selesai</label><input type="date" name="end_date" value="{{ d['end_date'] }}" class="form-control"></div>
+    <div class="mb-3"><label>Deskripsi</label><textarea name="description" rows="4" class="form-control">{{ d['description'] }}</textarea></div>
+    <button class="btn btn-primary w-100">Update</button>
+  </form>
+</div>
+{% endblock %}

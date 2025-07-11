@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" style="max-width:640px">
+  <h2 class="my-4 text-center">Input Data Magang</h2> 
+  <form method="post">
+    <div class="mb-3">
+      <label>Nama Mahasiswa</label>
+      <input type="text" name="nama_mahasiswa" class="form-control" required value="{{ session['user']['name'] }}">
+    </div>
+    <div class="mb-3">
+      <label>Perusahaan</label>
+      <input type="text" name="company" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Posisi</label>
+      <input type="text" name="position" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Tanggal Mulai</label>
+      <input type="date" name="start_date" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Tanggal Selesai</label>
+      <input type="date" name="end_date" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Deskripsi</label>
+      <textarea name="description" rows="4" class="form-control"></textarea>
+    </div>
+    <button class="btn btn-primary w-100">Simpan</button>
+  </form>
+</div>
+{% endblock %}

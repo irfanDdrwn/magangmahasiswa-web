@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h2 class="my-4">Daftar Data Magang</h2>
+  <table class="table table-striped">
+   <thead>
+  <tr>
+    <th>#</th>
+    <th>Nama Mahasiswa</th>
+    <th>Perusahaan</th>
+    <th>Posisi</th>
+    <th>Tanggal</th>
+    <th>Aksi</th>
+  </tr>
+</thead>
+<tbody>
+  {% for d in data %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ d['nama_mahasiswa'] }}</td>
+    <td>{{ d['company'] }}</td>
+    <td>{{ d['position'] }}</td>
+    <td>{{ d['start_date'] }} - {{ d['end_date'] or '-' }}</td>
+    <td>
+      <a href="{{ url_for('detail_data', id=d['id']) }}" class="btn btn-sm btn-outline-primary">Detail</a>
+      <form method="post" action="{{ url_for('delete_data', id=d['id']) }}" style="display:inline" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+        <button type="submit" class="btn btn-sm btn-outline-danger">Hapus</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
+
+  </table>
+</div>
+{% endblock %}
